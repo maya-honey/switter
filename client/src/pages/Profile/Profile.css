@@ -1,0 +1,27 @@
+@media screen and (min-width: 1101px) {
+    .Profile{
+        position: relative;
+        display: grid;
+        grid-template-columns: 18rem auto 20rem;
+        gap: 1rem;
+    }
+    
+    
+    .Profile-center{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .Profile{
+        position: relative;
+    }
+    
+    
+    .Profile-center{
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+    }
+}

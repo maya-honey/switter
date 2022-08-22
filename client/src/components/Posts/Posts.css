@@ -1,0 +1,12 @@
+.Posts
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .Home .PostSide{
+        margin:56px 0 0 0;
+    }
+}

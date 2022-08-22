@@ -1,0 +1,33 @@
+import express from 'express'
+const router = express.Router()
+import multer from 'multer'
+
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      //nodeプロセスを開始したディレクトリからの相対パスっぽい。
+      cb(null, "server/public/images");
+    },
+    filename: (req, file, cb) => {
+      cb(null, req.body.name);
+    },
+  });
+
+const upload = multer({ storage: storage});
+
+
+
+router.post('/', upload.single("file"), (req, res) => {
+  try{
+      return res.status(200).json("File Uploaded Successfully")
+  }catch (error){
+      console.log(error)
+  }
+});
+
+export default router
+

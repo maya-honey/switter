@@ -1,0 +1,14 @@
+@media screen and (min-width: 1101px) {
+  .Home {
+    position: relative;
+    display: grid;
+    grid-template-columns: 18rem auto 20rem;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .Home {
+    position: relative;
+  }
+}

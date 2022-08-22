@@ -1,0 +1,9 @@
+.FollowersCard>.user_wrapper>.follower>a>div{
+    display:flex;
+}
+.FollowersCard>.user_wrapper>.follower>a>div>.name{
+    margin:0 0 0 10px;
+}
+.FollowersCard>.user_wrapper>.follower>a>div>.name>span{
+    font-size:14px;
+}

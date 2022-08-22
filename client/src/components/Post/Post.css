@@ -1,0 +1,66 @@
+.Post
+{
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--cardColor);
+    border-radius: 1rem;
+    gap: 1rem;
+}
+.Post>.post_left{
+    flex-basis:50px;
+}
+.Post>.post_left>img{
+    width:100%;
+    border-radius:50%;
+}
+.Post>.post_right{
+    display:flex;
+    flex-basis:calc(100% - 50px);
+    flex-direction: column;
+    font-size:18px;
+}
+.Post>.post_right>img{
+    width: 100%;
+    max-height: 20rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin:15px 0;
+}
+.Post>.post_right>.user_name{
+    width:100%;
+    height:48px;
+    line-height:50px;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.postReact{
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .Post{
+        gap: 0.5rem;
+        border-radius:0rem;
+        background-color: var(--cardColor);
+    }
+    .Post>.post_right{
+        font-size:14px;
+    }
+    .Post>.post_right>.user_name{
+        font-size:15px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .Post>.post_right>.postReact>img{
+        height:1.2rem;
+        width:1.2rem;
+    }
+    .Posts{
+        gap: 0rem!important;
+    }
+}

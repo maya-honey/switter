@@ -1,0 +1,26 @@
+@media screen and (min-width: 1101px) {
+    .infoForm>.form_double>input{
+        width:50%;
+    }
+    .infoForm>.proimg_covimg{
+        display:flex;
+        flex-wrap:wrap;
+        height: 8rem;
+    }
+    .infoForm>.proimg_covimg>input{
+        margin:0 0 5px 0;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .infoForm>.form_double>input{
+        width:50%;
+    }
+    .infoForm>.proimg_covimg{
+        display:flex;
+        flex-wrap:wrap;
+        height: 8rem;
+    }
+    .infoForm>.proimg_covimg>input{
+        margin:0 0 5px 0;
+    }
+}

@@ -1,0 +1,30 @@
+@media screen and (min-width: 1101px) {
+    .PostSide
+    {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100vh;
+    overflow: auto;;
+    }
+    .sp_FollowersCard{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .PostSide{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: 100vh;
+        overflow: auto;
+        width:100%;
+    }
+    .sp_FollowersCard{
+        width:100%;
+        padding:10px;
+        box-sizing: border-box;
+    }
+
+}
