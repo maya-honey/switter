@@ -2,7 +2,8 @@
   "name": "starter",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://switter-maya.herokuapp.com",
+  "//": "https://switter-maya.herokuapp.com",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@iconscout/react-unicons": "^1.1.6",
     "@mantine/core": "^4.2.1",

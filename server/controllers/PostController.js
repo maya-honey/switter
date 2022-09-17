@@ -84,18 +84,27 @@ export const likePost = async (req, res) => {
 export const getTimelinePosts = async (req, res) => {
   const userId = req.params.id
   try {
+    //自分の投稿を取得
     const currentUserPosts = await PostModel.find({ userId: userId });
 
     const followingPosts = await UserModel.aggregate([
       { 
         $match: {
+          //単にuserIdではだめ。
+          //mongooseのデータベースではObjectId('//id')という形式になってる
+          //monngoose.Types.ObjectId(//)でその形式にできる
           _id: new mongoose.Types.ObjectId(userId),
         },
       },
       {
+        //usersのuserIdのfollowingに追加されているIdと
+        //postsのuserIDを突き合わせて、合致するものを
+        //あらたな配列に追加する
         $lookup: {
+          //databaseテーブルの名前
           from: "posts",
           localField: "following",
+          //自分のuserId
           foreignField: "userId",
           as: "followingPosts",
         },

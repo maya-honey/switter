@@ -13,8 +13,8 @@ function App() {
       className="App"
       style={{
         height:
-            window.location.href === "https://switter-maya.herokuapp.com/chat"
-            //window.location.href === "http://localhost:3001/chat"
+            //window.location.href === "https://switter-maya.herokuapp.com/chat"
+            window.location.href === "http://localhost:3001/chat"
             ? "calc(100vh - 2rem)"
             : "auto",
       }}
