@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Post.css";
 import Comment from "../../img/comment.png";
 import Share from "../../img/share.png";
+import Shared from "../../img/shared.png";
 import Heart from "../../img/like.png";
 import NotLike from "../../img/notlike.png";
 import { likePost } from "../../api/PostsRequests";
@@ -14,6 +15,7 @@ const Post = ({ postdata }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
   const [liked, setLiked] = useState(postdata.likes.includes(user._id));
   const [likes, setLikes] = useState(postdata.likes.length)
+  const [shared, setShared] = useState(false);
   const [profile_img, setProfile_img] = useState('');
   const [profile_first_name, setProfile_first_name] = useState('');
   const [profile_last_name, setProfile_last_name] = useState('');
@@ -23,6 +25,10 @@ const Post = ({ postdata }) => {
     setLiked((prev) => !prev);
     liked? setLikes((prev)=>prev-1): setLikes((prev)=>prev+1)
   };
+
+  const handleShare = () => {
+    setShared((prev) => !prev);
+  }
 
   const serverPublic =  process.env.REACT_APP_PUBLIC_FOLDER ;
 
@@ -84,8 +90,15 @@ const Post = ({ postdata }) => {
             style={{ cursor: "pointer" }}
             onClick={handleLike}
           />
-          <img src={Comment} alt="" />
-          <img src={Share} alt="" />
+          <img
+            src={Comment}
+            alt=""
+            />
+          <img
+            src={shared ? Shared : Share}
+            alt=""
+            style={{ cursor: "pointer"}}
+            onClick={handleShare} />
         </div>
 
         <span style={{ color: "var(--gray)", fontSize: "12px" }}>
